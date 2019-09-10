@@ -1,0 +1,29 @@
+{
+  "name": "age-to-birth-date",
+  "version": "1.1.2",
+  "description": "Can calculate birth date for a given age, and other such things",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "jest": "^24.9.0",
+    "jest-date-mock": "^1.0.7",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.20.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.6.2",
+    "uglify-js": "^3.6.0"
+  },
+  "scripts": {
+    "minify": "uglifyjs --compress --mangle --output dist/index.js -- dist/index.js",
+    "test": "jest",
+    "build": "tsc",
+    "prepublish": "npm run test && npm run build && npm run minify"
+  },
+  "author": "Daniel Setréus<daniel.setreus@gmail.com>",
+  "license": "ISC"
+}
